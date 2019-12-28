@@ -1,4 +1,4 @@
-# HHU_course
+# HHU_course 河海大学，计算机专业课程资料
 **阅读须知：这个project（尽可能）整理了HHU CS专业课的学习资料，主要是为了方便学弟学妹们对课程有个初步认识，其中很多内容仅代表个人观点，所有内容仅供学习交流使用，请勿违犯法律和校规！<br>
 资料包地址：https://pan.baidu.com/s/1NlRYO8dC-WitwmrRu6nd-g 提取码：fmu3<br>
 转载时请注明出处！https://github.com/Servon-Lee/HHU_course<br>
