@@ -91,5 +91,8 @@ Zyf早上八点就会点名，今年一共点了三次，分别是周一，周�
 
 时间关系就先写到这里，感觉大二上之前的应该不是特别需要吧。。。大家需要的话给我留言，需求量大我再补充。<br>
 <br>
-**资料包地址：https://pan.baidu.com/s/1NlRYO8dC-WitwmrRu6nd-g 提取码：fmu3**<br>
+**资料包百度云地址：<br>
+大三及以前：https://pan.baidu.com/s/1NlRYO8dC-WitwmrRu6nd-g 提取码：fmu3<br>
+大四上：https://pan.baidu.com/s/1ugnU4ZPX2OWnN0tyeNTxmg 提取码：ww8v<br>
+转载时请注明出处！https://github.com/Servon-Lee/HHU_course<br>**<br>
 **以上仅代表个人观点，如果对您有帮助请给一个⭐star，欢迎各路大神补充！**<br>
