@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/KrKing/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>计网框架v0.3</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\C:\Users\KrKing\Desktop\">--><base href=".">
+</head>
+<body>
+<h1>一、概述</h1>
+<h2>什么是计算机网络</h2>
+<p>将不同地理位置的自治计算机，通过通信系统连接起来，以实现数据通信和资源共享的计算机系统。</p>
+<h2>局域网和广域网</h2>
+<h3>局域网的组成(填空题)</h3>
+<p>服务器、网络互连设备、传输介质、工作站、网卡</p>
+<h3>定义</h3>
+<ul>
+<li>局域网：在一个局部的地理区域内，通常是方圆几千米内，将各种计算机、外部设备、数据库互相连接起来，形成的<strong>计算机通信网</strong>。局域网由各种软件、硬件、传输介质组成。</li>
+<li>广域网：通常能跨接很大的范围，所覆盖的范围为几十千米到几千千米，能连接很多城市和国家，跨越几个洲提供远距离通信，形成国际性的远程网络。一般分为通信子网和资源子网。通信子网负责实现分组的转发，资源子网负责资源的存储和处理。</li>
+</ul>
+<h3>区别</h3>
+<ul>
+<li><strong>范围上</strong>：局域网覆盖范围很小，广域网覆盖范围很大。</li>
+<li><strong>拓扑结构上</strong>：局域网各种结构，广域网的通信子网多为网型</li>
+<li><strong>功能上</strong>：大量的局域网在广域网中处于资源子网的角色。</li>
+</ul>
+<h1>二、体系结构</h1>
+<h2>定义</h2>
+<p>对<strong>计算机网络及其部件</strong>的功能进行较为精确的定义，即<strong>从功能的角度描述计算机网络的结构</strong>，是层次和协议的集合。仅仅定义了网络及其部件通过协议应完成的功能，不定义协议的实现细节和各层协议之间的接口关系。</p>
+<h2>协议和服务</h2>
+<h3>协议</h3>
+<p>对等实体间进行数据交换应遵循的规则、标准或约定。包括三部分：语法、语义和同步(规则)。语法对组织结构或格式进行定义，语义解释各部分意义，同步(规则)即事件实现顺序的详细说明。</p>
+<h3>服务</h3>
+<p>网络体系中下层对上层提供的功能。</p>
+<h3>协议和服务的区别</h3>
+<p>协议是水平的，服务是垂直的。</p>
+<h3>协议和服务的联系</h3>
+<p>本层协议的实现保证了能向上一层提供服务。</p>
+<h1>三、物理层</h1>
+<h2>四大特性(选择题)</h2>
+<ul>
+<li>机械</li>
+<li>电气</li>
+<li>功能</li>
+<li>规程</li>
+</ul>
+<h2>双绞线相关(选择题)</h2>
+<h1>四、数据链路层</h1>
+<h2>ARQ(选择题)</h2>
+<ul>
+<li>停--等协议</li>
+<li>连续重发协议</li>
+<li>选择重发协议</li>
+</ul>
+<h2>滑动窗口</h2>
+<h3>原理</h3>
+<h3>过程</h3>
+<h2>PPP协议</h2>
+<p>实现数据链路层的点到点传输</p>
+<h2>LLC和MAC</h2>
+<p>提供可靠的链路层功能，实现可靠的数据链路。</p>
+<h1>五、局域网</h1>
+<h2>CSMA/CD</h2>
+<h3>简述</h3>
+<p>CSMA/CD即载波监听多路访问/冲突检测协议，<strong>用于以太网MAC层进行总线竞争</strong>，其工作包括4个步骤：先听后发、边发边听、冲突停止、延迟重发。发送数据前，先监听总线，如果没有信号开始传输数据，传输开始的2t时间内继续监听，如果没有冲突信号，则停止监听，否则立即停止，并发送信号增强冲突。按照一定的策略延迟发送，重新进行先听后发。</p>
+<h3>先听后发</h3>
+<ul>
+<li>非坚持:线路忙，等待一段时间再监听，不冲突则立即发送。有效避免冲突，但信道利用率低。</li>
+<li>1坚持:线路忙，继续监听，不冲突立即发送，信道利用率高，但增强冲突。</li>
+<li>p坚持:线路忙，继续监听，不冲突时p概率发送，1-p概率等待。有效平衡，但复杂。</li>
+</ul>
+<h3>延迟重发</h3>
+<ul>
+<li>随机等待</li>
+<li>二进制指数退避算法BEB</li>
+<li>截断式二进制指数退避算法</li>
+</ul>
+<h3>优缺点</h3>
+<p>优点：原理简单，易于实现。各工作站处于平等地位，不需集中控制和优先级控制。</p>
+<p>缺点：在网络负载大时，发送时间增长，效率变低。</p>
+<h2>令牌环网</h2>
+<p>采用令牌(Token)机制</p>
+<p>令牌是一个特殊的帧，拥有令牌的主机才能发送数据帧，其他主机只能接收。</p>
+<ol>
+<li>当一个站要发送数据时，首先将数据形成帧并存在发送缓冲区内，然后命令环接口去截获令牌。</li>
+<li>环接口不断检测环路中流动的比特流，当检测到令牌时将其截获。接着就可将帧发送入环路。</li>
+<li>令牌环网可以允许一个站发送多个帧，只要不超过占用令牌的最长时间。</li>
+<li>发送完成后并不立即释放令牌，而应等待发送的帧再次传回该站，并确认目标站已接收帧之后再释放令牌。</li>
+<li>帧每经过一个环接口，环接口检查帧中的目标地址是否为自己，如果是，则保存下来并转发，否则直接转发。 </li>
+<li>对目标站已接收的帧进行撤销，对目标站未接收的帧进行重发。</li>
+</ol>
+<h2>IEEE 802&amp;100BASE-T(选择题)</h2>
+<h2>共享式以太网&amp;交换式以太网</h2>
+<h3>交换式以太网的实现过程</h3>
+<ol>
+<li>交换式以太网采用<strong>交换机</strong>实现节点间的数据帧传输，拓扑结构为<strong>星型</strong></li>
+<li>各节点构造数据帧并发送给交换机，交换机根据<strong>帧中的目标MAC地址</strong>和内存中<strong>交换表<strong>确定数据的转发端口，并向目标端口进行转发，如果找不到转发端口则进行</strong>广播转发</strong></li>
+<li>交换机进行<strong>逆向地址学习</strong>，根据接收到的帧中的源MAC地址和接收端口完善交换表</li>
+</ol>
+<h3>交换机的功能</h3>
+<ul>
+<li>地址表学习</li>
+<li>帧的转发和过滤</li>
+</ul>
+<h3>交换机与集线器区别</h3>
+<ul>
+<li>OSI体系结构上，交换机是链路层设备，集线器是物理层设备。</li>
+<li>集线器一个端口工作时，其他端口都能收到消息，容易产生广播风暴。交换机只有发送端口和接收端口相互相应，不影响其他端口。能隔离冲突域而有效避免广播风暴。</li>
+<li>从带宽来看，集线器工作于半双工模式，交换机既能半双工又能全双工。 </li>
+</ul>
+<h1>六、网络层</h1>
+<h2>网络层功能</h2>
+<ul>
+<li>路由控制:利用网络的拓扑结构等选择分组转发路径</li>
+<li>拥塞控制:控制和预防网络中出现过多的分组</li>
+<li>异种网络的互连:解决不同网络在寻址、分组大小、协议等方面的差异</li>
+</ul>
+<h2>数据报与虚电路</h2>
+<h3>工作流程和特点</h3>
+<ul>
+<li>数据报：网络随时接受主机发送的分组，网络为每个分组独立选择路由。网络尽最大努力将分组交付给目的主机，但不提供承诺。网络不保证送达，也不保证先后顺序和时限。在网络拥塞时可选择一部分分组丢弃。</li>
+<li>虚电路：主机之间建立一条虚电路，所有分组都通过虚电路传送，分组按照先进先出的原则传送到目的站。</li>
+</ul>
+<h3>优缺点</h3>
+<ul>
+<li><strong>大小</strong>：网络上传送的报文长度在多数情况下很短，用数据报迅速又经济
+建立释放虚电路浪费网络资源</li>
+<li><strong>功能</strong>：在使用数据报时每个分组需携带完整的地址信息，使用虚电路不需要携带完整信息，仅需要虚电路号码标志</li>
+<li><strong>可靠</strong>：发生故障就必须换一条虚电路，但数据报不需要。</li>
+</ul>
+<h2>直接交付&amp;间接交付</h2>
+<h2>ARP&amp;RARP</h2>
+<h3>分组交付过程</h3>
+<ol>
+<li>判断源主机和目标主机是否在同一网络内</li>
+<li>
+<p>在同一网络内：</p>
+<ol>
+<li>源主机网络层在ARP缓存中查找目的主机的IP地址对应的MAC地址，如果查找不到，通过ARP模块查找。</li>
+<li>源主机构建数据帧，并设置目的主机的MAC地址，发送。</li>
+</ol>
+</li>
+<li>
+<p>不在同一网络内：</p>
+<ol>
+<li>源主机网络层寻找网关的IP地址。</li>
+<li>在ARP缓存中查找网关IP地址对应的MAC地址，如果查找不到，通过ARP你就查找。</li>
+<li>源主机构建数据帧，设置网关的MAC地址，并发送。</li>
+</ol>
+</li>
+</ol>
+<h3>以太网下ARP过程</h3>
+<p>采用ARP协议</p>
+<ol>
+<li>首先A主机<strong>发送ARP查询报文</strong>(目标MAC地址全1的广播报文)，询问IP为xxx的主机的网络层下链路层的MAC地址</li>
+<li>主机B的网络层ARP模块收到报文后进行<strong>回复</strong>，发送ARP应答消息，目标地址为A的MAC地址</li>
+<li>主机A的ARP模块<strong>收到</strong>回复后存入缓存。</li>
+</ol>
+<h2>路由</h2>
+<h3>什么是路由</h3>
+<p>通信子网中的网络节点在收到一个分组后，根据<strong>分组的目标地址</strong>以及<strong>当前子网的环境</strong>，确定合适的转发路径的过程称为路由。</p>
+<h3>静态路由和动态路由区别</h3>
+<p>静态路由，即非自适应的路由选择，<strong>网络节点在转发分组时选择的路径是预先确定好的</strong>，特点是实现简单，开销小，但不能适应网络的变化。</p>
+<p>动态路由，即自适应的路由选择，可以适应网络的变化，动态生成路由表。</p>
+<h3>自治系统</h3>
+<p>在单一的技术管理下的一组路由器，使用同一种AS内部的路由选择协议确定分组在AS内部的路由和一种AS之间的路由选择协议确定分组在AS之间的路由。</p>
+<h3>IGP</h3>
+<p>内部网关协议</p>
+<h4>RIP过程</h4>
+<p>路由信息协议，是一种<strong>分布式的基于距离向量</strong>的路由选择协议。</p>
+<p><strong>工作过程：</strong></p>
+<ol>
+<li>路由器在刚开始工作时，只知道到<strong>直连的网络的距离</strong>，定义为1</li>
+<li>随后，每个路由器只和数目有限的<strong>相邻</strong>的路由器交换并<strong>更新</strong>路由信息。</li>
+<li>经过若干次更新后，所有的路由器最终都会知道本自治系统内任何一个网络的最短距离和下一条路由器的地址。</li>
+</ol>
+<h4>RIP优缺点</h4>
+<ol>
+<li>最大的优点就是实现简单，开销较小</li>
+<li>缺点是当网络出现故障时，需要较长的时间才能通知到其他路由器</li>
+<li>限制了网络的规模</li>
+<li>随着规模增大，开销增大</li>
+</ol>
+<h4>OSPF过程</h4>
+<p>开放最短路径优先协议，是一种<strong>分布式链路状态协议</strong>。</p>
+<ol>
+<li>每台路由器使用Hello报文与它的邻居<strong>建立邻接关系</strong></li>
+<li>每台路由器向邻居<strong>发送</strong>链路状态通告(LSA)，有时称作链路状态报文(LSP)</li>
+<li>邻居收到LSP后要依次向它的邻居<strong>转发</strong>这些LSP(洪泛)</li>
+<li>每台路由器要在数据库中<strong>保存</strong>一份LSA备份</li>
+<li>所有的路由器数据库最终应相同，根据数据库采用Dijkstra算法<strong>计算出到每个节点的最短路径</strong>，输出到路由表</li>
+</ol>
+<h3>EGP</h3>
+<p>外部网关协议</p>
+<h4>BGP过程</h4>
+<ol>
+<li>一个BGP发言人与其他自治系统中的BGP发言人要交换路由信息，首先应建立TCP连接</li>
+<li>在此连接上交换BGP报文以建立BGP会话，然后利用BGP会话交换网络可达性信息</li>
+<li>当BGP发言人互相交互了网络可达性的信息后，各BGP发言人就根据所采用的策略从收到的路由信息中找出到达各AS的较好路由</li>
+</ol>
+<h2>IP</h2>
+<p>用于计算机网络的网络层，实现网络互连</p>
+<h3>MTU&amp;PDU</h3>
+<p>最大传输单元：限定网络层IP数据包大小的数值，数据包不能超过MTU，超过了要拆分
+协议数据单元：对等层次之间的数据传输单位</p>
+<h2>ICMP</h2>
+<p>网络控制报文协议</p>
+<p>路由器或目标机器在发现传递IP分组出错时，向源节点发送信息。或帮助主机从某个路由器或目标机器获取特定信息。</p>
+<h2>IGMP</h2>
+<p>网络组管理协议</p>
+<p>用于实现互联网组播中，组播路由器与计算机之间的通信，以维护组播组中的成员。</p>
+<h2>子网划分&amp;网址聚合&amp;路由表</h2>
+<h1>七、传输层</h1>
+<h2>TCP</h2>
+<h3>可靠传输策略</h3>
+<h4>差错控制</h4>
+<p>通过<strong>校验、确认</strong>和<strong>超时重传</strong>实现。发送方在发送报文时加入校验码，并启动相关的定时器。通信子网中的路由器和目标节点在收到报文时对报文 <strong>重新校验</strong> ，发现错误丢弃报文，导致定时器超时，发送方重发。校验正确，接收方向发送方发送<strong>确认报文</strong>。</p>
+<h4>流量控制</h4>
+<p>TCP协议通过<strong>滑动窗口</strong>机制来实现流量控制。</p>
+<p>用来控制<strong>发送方的发送速度不超过接收方的接收速度</strong>。发送方设置“发送窗口”，接收方设置“接收窗口”，在未收到接收方发送的确认信息前能发送的数据量由发送窗口决定，发送方根据接收方返回报文中的“窗口大小”来设置“发送窗口”。</p>
+<p>发送窗口的大小由<strong>通告窗口w1和拥塞窗口w2共同决定</strong>。通告窗口即接收方发送给发送方的窗口大小，拥塞窗口即通过TCP拥塞控制确定的窗口大小。</p>
+<blockquote>
+<p>发送窗口=min(w1,w2)</p>
+</blockquote>
+<h4>拥塞控制</h4>
+<ul>
+<li>当网络中的链路带宽、交换节点的存储能力和转发能力低于网络负载的需求时，网络处于一种非正常运转的状态，称为拥塞。采用一定的机制及时发现并消除网络的拥塞状态，称为拥塞控制。</li>
+<li>发送端根据跟踪数据的丢失现象和往返时延的变化确定网络的传输能力，以此调整数据发送速率。</li>
+<li>TCP在发送端设置拥塞窗口，定义为发送端未收到确认信息时最多可以连续发送的数据量，当网络负载较大时，拥塞窗口较小，反之则大。</li>
+<li>可通过两种方式检测到网络的拥塞状况：一种是超时定时器，超时未收到数据确认则数据丢失。另一种是收到多次重复确认，说明后继分组传输中出了问题。</li>
+<li>对前一种，采用慢启动和拥塞控制。对后一种，采用快重发和拥塞控制。</li>
+</ul>
+<h4>慢启动：</h4>
+<p>系统设置慢启动门限ssthresh,当拥塞窗口cwnd小于ssthresh时，采用慢启动，在慢启动算法过程中，cwnd在每收到一个ack时，增加一个MSS，相当于cwnd翻倍，因此cwnd是以指数形式增长。直到达到ssthresh，或者发生丢包。</p>
+<h4>拥塞避免：</h4>
+<p>在拥塞避免过程中，在每收到一个ack时，cwnd增加1，呈线性增加。</p>
+<h4>快重传：</h4>
+<p>指发送方连续收到对某个数据包2次确认后，表明网络数据可以传输，在某个数据包后面的数据已经到达目标端，但是该数据包还没有到，极大的可能是丢包。因此，重新发送该数据包，提高数据发送的效率。</p>
+<h3>三次握手</h3>
+<h3>四次握手</h3>
+<h3>超时重传：单一定时器</h3>
+<h2>UDP</h2>
+<p>用户数据报协议</p>
+<p>传输层，用于向应用层提供不可靠的传输。</p>
+<h1>八、应用层</h1>
+<h2>DNS</h2>
+<p>域名服务</p>
+<p>将域名解析为IP地址</p>
+<h2>HTTP</h2>
+<p>超文本传输协议</p>
+<p>用于应用层的WWW服务，实现客户端与web服务器之间的交互</p>
+<h2>WWW</h2>
+<p>万维网</p>
+<p>提供存储web内容的服务</p>
+<h2>HTML</h2>
+<p>超文本标记语言</p>
+<p>描述web页面</p>
+<h2>URL</h2>
+<p>统一资源定位符</p>
+<p>用于唯一标识网络中的一个资源</p>
+<h2>FTP</h2>
+<p>文件传输协议</p>
+<p>用于服务器向主机提供文件传输功能</p>
+<h2>SMTP</h2>
+<p>简单邮件传输协议</p>
+<p>用于发送方客户端向邮件发送服务器传递信息，邮件发送服务器向接收方邮件接收服务器传递信息。</p>
+<h2>访问某网页</h2>
+<h3>用到哪些协议</h3>
+<p>应用层</p>
+<blockquote>
+<p>DNS:域名解析</p>
+<p>HTTP:超文本传输协议</p>
+</blockquote>
+<p>传输层</p>
+<blockquote>
+<p>TCP:建立连接，提供可靠数据传输</p>
+</blockquote>
+<p>网络层</p>
+<blockquote>
+<p>IP:进行路由选择</p>
+<p>ICMP:提供差错监测</p>
+<p>ARP:将IP地址映射为MAC地址</p>
+</blockquote>
+<p>链路层</p>
+<blockquote>
+<p>MAC&amp;LLC:提供可靠的链路层功能，实现可靠的数据链路</p>
+</blockquote>
+<h3>域名解析过程</h3>
+<ol>
+<li>本地域名服务器收到域名解析请求后，查找其缓存内的域名信息，如有主机域名或IP地址，则返回给用户。否则向其他DNS服务器查询</li>
+<li>根域名服务器返回它所知的最佳结果，如.cn的域名服务器的域名与IP地址</li>
+<li>本地DNS服务器向.cn域名服务器发出查询请求，.cn域名服务器返回edu.cn域名服务器的IP地址</li>
+<li>本地DNS服务器向.edu.cn域名服务器发出查询请求，.edu.cn域名服务器返回pku.edu.cn的IP地址</li>
+<li>本地DNS服务器向pku.edu.cn域名服务器发出查询请求，返回www.pku.edu.cn的IP地址</li>
+<li>本地DNS服务器将查询结果返回给用户</li>
+</ol>
+<h3>内容加载过程</h3>
+<ol>
+<li>DNS将域名解析为IP</li>
+<li>通过TCP建立浏览器与Web服务器之间的连接</li>
+<li>浏览器发送http资源请求</li>
+<li>Web服务器响应请求，发送http响应</li>
+<li>浏览器解释响应报文，渲染到浏览器，显示界面</li>
+</ol>
+<h1>九、网络管理</h1>
+<h2>什么是网络管理</h2>
+<p>网络管理包括对软件、硬件和人力资源的综合与协调，以便对网络资源进行监视、测试、配置、分析、评价和控制，这样就能以合理的价格满足网络的一些需求，如实时运行性能、服务质量等。网络管理常简称为网管。</p>
+<h2>网络管理基本模型</h2>
+<p>网络管理采用<strong>管理者/代理者</strong>模型。</p>
+<ul>
+<li>在被管设备中<strong>运行代理者</strong>，用来监测和控制被管设备</li>
+<li>管理者收集代理者发送的被管设备的状态，并<strong>分析和预测</strong>网络以及设备状态</li>
+<li>管理者根据分析结果向代理者<strong>发送控制指令</strong>，代理者对被管设备进行操作</li>
+<li>管理者与代理者之间的通信基于<strong>网络管理协议</strong>进行</li>
+</ul>
+<h2>SNMP</h2>
+<p>简单网络管理协议</p>
+<p>描述代理和管理者之间的交互协议，包括交互顺序以及数据包的格式等。</p>
+<h1>附：英汉互译</h1>
+<pre><code>LAN:局域网
+WAN:广域网
+VLAN:虚拟局域网
+ISP:互联网服务提供商
+MAC:媒体访问控制
+PPP:点到点协议
+ISO/OSI RM:国际标准化组织/开放系统互连参考模型
+CSMA/CD:载波监听多路访问/冲突检测
+IP:互联网协议
+MTU:最大传输单元
+PDU:协议数据单元
+ARP:地址解析协议
+RARP:反向地址解析协议
+ICMP:网络控制报文协议
+IGMP:网络组管理协议
+IGP:内部网关协议
+EGP:外部网关协议
+RIP:路由信息协议
+OSPF:开放最短路径优先协议
+BGP:边界网关协议
+TCP:传输控制协议
+UDP:用户数据报协议
+DNS:域名服务
+WWW:万维网
+URL:统一资源定位符
+HTTP:超文本传输协议
+HTML:超文本标记语言
+FTP:文件传输协议
+SMTP:简单邮件传输协议
+SNMP:简单网络管理协议
+</code></pre>
+
+<h1>附：2017级计网考试内容</h1>
+<pre><code>名词解释：    
+    OSI模型
+    CSMA/CD
+    DNS
+    HTTP
+TCP/IP体系结构功能及各层协议
+IP分片的原因
+什么是路由？什么是静态路由和动态路由？
+给IP和掩码求网络号、主机号、广播地址、可分配给主机的IP段、主机数
+路由表编写
+</code></pre>
+
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>
